@@ -1,0 +1,622 @@
+reading files in : data/
+reading fileSocial-DATA.json
+reading fileProductivity-DATA.json
+reading fileHealth & Fitness-DATA.json
+reading fileMedia & Video-DATA.json
+reading filePhotography-DATA.json
+reading fileWeather-DATA.json
+reading fileSports-DATA.json
+reading fileTools-DATA.json
+reading fileTravel & Local-DATA.json
+reading filePersonalization-DATA.json
+reading fileEducation-DATA.json
+reading fileShoopping-DATA.json
+reading fileMedical-DATA.json
+reading fileWidgets-DATA.json
+reading fileLibraries & Demo-DATA.json
+reading fileEntertainment -DATA.json
+reading fileNews & Magazines-DATA.json
+reading fileFinance-DATA.json
+reading fileCommunication-DATA.json
+reading fileMusic & Audio-DATA.json
+reading fileLifestyle-DATA.json
+reading fileLive Wallpaper-DATA.json
+reading fileTransportation-DATA.json
+reading fileBusiness-DATA.json
+reading fileBook & References-DATA.json
+reading fileComics-DATA.json
+reading fileGame-DATA.json
+starting read all data
+analyzed apps 22found 0
+analyzed apps 27found 0
+analyzed apps 38found 0
+analyzed apps 42found 0
+analyzed apps 51found 0
+analyzed apps 57found 0
+analyzed apps 93found 0
+analyzed apps 103found 0
+analyzed apps 119found 0
+analyzed apps 124found 0
+analyzed apps 133found 0
+analyzed apps 146found 0
+analyzed apps 153found 0
+analyzed apps 167found 0
+analyzed apps 190found 0
+analyzed apps 202found 0
+analyzed apps 218found 0
+analyzed apps 225found 0
+analyzed apps 260found 0
+analyzed apps 284found 0
+analyzed apps 321found 0
+analyzed apps 340found 0
+analyzed apps 351found 0
+analyzed apps 364found 0
+analyzed apps 372found 0
+analyzed apps 398found 0
+analyzed apps 406found 0
+analyzed apps 420found 0
+analyzed apps 435found 0
+analyzed apps 446found 0
+analyzed apps 462found 0
+analyzed apps 490found 0
+analyzed apps 495found 0
+analyzed apps 510found 0
+analyzed apps 542found 0
+analyzed apps 550found 0
+analyzed apps 559found 0
+analyzed apps 571found 0
+analyzed apps 587found 0
+analyzed apps 590found 0
+analyzed apps 599found 0
+analyzed apps 617found 0
+analyzed apps 629found 0
+analyzed apps 640found 0
+analyzed apps 667found 0
+analyzed apps 698found 0
+analyzed apps 716found 0
+analyzed apps 725found 0
+analyzed apps 727found 0
+analyzed apps 735found 0
+analyzed apps 750found 0
+analyzed apps 764found 0
+analyzed apps 781found 0
+analyzed apps 788found 0
+analyzed apps 812found 0
+analyzed apps 819found 0
+analyzed apps 855found 0
+analyzed apps 896found 0
+analyzed apps 899found 0
+analyzed apps 923found 0
+analyzed apps 933found 0
+analyzed apps 948found 0
+analyzed apps 957found 0
+analyzed apps 970found 0
+analyzed apps 978found 0
+analyzed apps 1003found 0
+analyzed apps 1014found 0
+analyzed apps 1025found 0
+analyzed apps 1060found 0
+analyzed apps 1070found 0
+analyzed apps 1101found 0
+analyzed apps 1137found 0
+analyzed apps 1155found 0
+analyzed apps 1172found 0
+analyzed apps 1180found 0
+analyzed apps 1194found 0
+analyzed apps 1204found 0
+analyzed apps 1225found 0
+analyzed apps 1233found 0
+analyzed apps 1240found 0
+analyzed apps 1248found 0
+analyzed apps 1254found 0
+analyzed apps 1261found 0
+analyzed apps 1296found 0
+analyzed apps 1296found 0
+analyzed apps 1299found 0
+analyzed apps 1314found 0
+analyzed apps 1315found 0
+analyzed apps 1323found 0
+analyzed apps 1350found 0
+analyzed apps 1361found 0
+analyzed apps 1369found 0
+analyzed apps 1373found 0
+analyzed apps 1385found 0
+analyzed apps 1398found 0
+analyzed apps 1404found 0
+analyzed apps 1423found 0
+analyzed apps 1428found 0
+analyzed apps 1437found 0
+analyzed apps 1453found 0
+analyzed apps 1465found 0
+analyzed apps 1478found 0
+analyzed apps 1497found 0
+analyzed apps 1520found 0
+analyzed apps 1536found 0
+analyzed apps 1540found 0
+analyzed apps 1561found 0
+analyzed apps 1572found 0
+analyzed apps 1581found 0
+analyzed apps 1593found 0
+analyzed apps 1608found 0
+analyzed apps 1616found 0
+analyzed apps 1621found 0
+analyzed apps 1633found 0
+analyzed apps 1634found 0
+analyzed apps 1655found 0
+analyzed apps 1679found 0
+analyzed apps 1698found 0
+analyzed apps 1706found 0
+analyzed apps 1741found 0
+analyzed apps 1766found 0
+analyzed apps 1803found 0
+analyzed apps 1823found 0
+analyzed apps 1832found 0
+analyzed apps 1849found 0
+analyzed apps 1857found 0
+analyzed apps 1857found 0
+analyzed apps 1864found 0
+analyzed apps 1879found 0
+analyzed apps 1918found 0
+analyzed apps 1929found 0
+analyzed apps 1934found 0
+analyzed apps 1949found 0
+analyzed apps 1968found 0
+analyzed apps 1990found 0
+analyzed apps 2003found 0
+analyzed apps 2013found 0
+analyzed apps 2023found 0
+analyzed apps 2046found 0
+analyzed apps 2076found 0
+analyzed apps 2086found 0
+analyzed apps 2117found 0
+analyzed apps 2142found 0
+analyzed apps 2152found 0
+analyzed apps 2170found 0
+analyzed apps 2187found 0
+analyzed apps 2204found 0
+analyzed apps 2211found 0
+analyzed apps 2222found 0
+analyzed apps 2223found 0
+analyzed apps 2229found 0
+analyzed apps 2239found 0
+analyzed apps 2247found 0
+analyzed apps 2262found 0
+analyzed apps 2274found 0
+analyzed apps 2280found 0
+analyzed apps 2324found 0
+analyzed apps 2339found 0
+analyzed apps 2359found 0
+analyzed apps 2372found 0
+analyzed apps 2385found 0
+analyzed apps 2389found 0
+analyzed apps 2407found 0
+analyzed apps 2416found 0
+analyzed apps 2425found 0
+analyzed apps 2436found 0
+analyzed apps 2446found 0
+analyzed apps 2452found 0
+analyzed apps 2460found 0
+analyzed apps 2481found 0
+analyzed apps 2488found 0
+analyzed apps 2522found 0
+analyzed apps 2537found 0
+analyzed apps 2546found 0
+analyzed apps 2554found 0
+analyzed apps 2571found 0
+analyzed apps 2580found 0
+analyzed apps 2590found 0
+analyzed apps 2607found 0
+analyzed apps 2631found 0
+analyzed apps 2635found 0
+analyzed apps 2643found 0
+analyzed apps 2669found 0
+analyzed apps 2688found 0
+analyzed apps 2700found 0
+analyzed apps 2722found 0
+analyzed apps 2731found 0
+analyzed apps 2739found 0
+analyzed apps 2749found 0
+analyzed apps 2761found 0
+analyzed apps 2776found 0
+analyzed apps 2790found 0
+analyzed apps 2791found 0
+analyzed apps 2804found 0
+analyzed apps 2831found 0
+analyzed apps 2856found 0
+analyzed apps 2863found 0
+analyzed apps 2890found 0
+analyzed apps 2896found 0
+analyzed apps 2906found 0
+analyzed apps 2920found 0
+analyzed apps 2941found 0
+analyzed apps 2977found 0
+analyzed apps 2991found 0
+analyzed apps 2999found 0
+analyzed apps 3008found 0
+analyzed apps 3024found 0
+analyzed apps 3030found 0
+analyzed apps 3045found 0
+analyzed apps 3053found 0
+analyzed apps 3078found 0
+analyzed apps 3083found 0
+analyzed apps 3114found 0
+analyzed apps 3141found 0
+analyzed apps 3155found 0
+analyzed apps 3169found 0
+analyzed apps 3179found 0
+analyzed apps 3186found 0
+analyzed apps 3190found 0
+analyzed apps 3200found 0
+analyzed apps 3201found 0
+analyzed apps 3212found 0
+analyzed apps 3217found 0
+analyzed apps 3269found 0
+analyzed apps 3277found 0
+analyzed apps 3283found 0
+analyzed apps 3296found 0
+analyzed apps 3303found 0
+analyzed apps 3318found 0
+analyzed apps 3339found 0
+analyzed apps 3351found 0
+analyzed apps 3357found 0
+analyzed apps 3363found 0
+analyzed apps 3378found 0
+analyzed apps 3383found 0
+analyzed apps 3406found 0
+analyzed apps 3433found 0
+analyzed apps 3451found 0
+analyzed apps 3456found 0
+analyzed apps 3479found 0
+analyzed apps 3493found 0
+analyzed apps 3500found 0
+analyzed apps 3510found 0
+analyzed apps 3529found 0
+analyzed apps 3542found 0
+analyzed apps 3551found 0
+analyzed apps 3560found 0
+not found Personalization-DATA.json  1
+not found Travel & Local-DATA.json  1
+not found News & Magazines-DATA.json  1
+not found Transportation-DATA.json  1
+not found Sports-DATA.json  1
+not found Widgets-DATA.json  1
+not found Education-DATA.json  1
+not found Shoopping-DATA.json  1
+not found Photography-DATA.json  1
+not found Entertainment -DATA.json  1
+not found Music & Audio-DATA.json  1
+not found Health & Fitness-DATA.json  1
+not found Business-DATA.json  1
+not found Medical-DATA.json  1
+not found Productivity-DATA.json  1
+not found Game-DATA.json  1
+not found Finance-DATA.json  1
+not found Tools-DATA.json  1
+not found Social-DATA.json  1
+not found Weather-DATA.json  1
+not found Live Wallpaper-DATA.json  1
+not found Media & Video-DATA.json  1
+not found Lifestyle-DATA.json  1
+not found Libraries & Demo-DATA.json  1
+not found Communication-DATA.json  1
+not found Comics-DATA.json  1
+not found Book & References-DATA.json  1
+reading files in : data/
+reading fileSocial-DATA.json
+reading fileProductivity-DATA.json
+reading fileHealth & Fitness-DATA.json
+reading fileMedia & Video-DATA.json
+reading filePhotography-DATA.json
+reading fileWeather-DATA.json
+reading fileSports-DATA.json
+reading fileTools-DATA.json
+reading fileTravel & Local-DATA.json
+reading filePersonalization-DATA.json
+reading fileEducation-DATA.json
+reading fileShoopping-DATA.json
+reading fileMedical-DATA.json
+reading fileWidgets-DATA.json
+reading fileLibraries & Demo-DATA.json
+reading fileEntertainment -DATA.json
+reading fileNews & Magazines-DATA.json
+reading fileFinance-DATA.json
+reading fileCommunication-DATA.json
+reading fileMusic & Audio-DATA.json
+reading fileLifestyle-DATA.json
+reading fileLive Wallpaper-DATA.json
+reading fileTransportation-DATA.json
+reading fileBusiness-DATA.json
+reading fileBook & References-DATA.json
+reading fileComics-DATA.json
+reading fileGame-DATA.json
+starting read existing data
+
+1%
+2%
+3%
+4%
+5%
+6%
+7%
+8%
+9%
+10%
+11%
+12%
+13%
+existing data read
+analyzed apps 22found 0
+analyzed apps 27found 0
+analyzed apps 38found 0
+analyzed apps 42found 0
+analyzed apps 51found 0
+analyzed apps 57found 0
+analyzed apps 93found 0
+analyzed apps 103found 0
+analyzed apps 119found 0
+analyzed apps 124found 0
+analyzed apps 133found 0
+analyzed apps 146found 0
+analyzed apps 153found 0
+analyzed apps 167found 0
+analyzed apps 190found 0
+analyzed apps 202found 0
+analyzed apps 218found 0
+analyzed apps 225found 0
+analyzed apps 260found 0
+analyzed apps 284found 0
+analyzed apps 321found 0
+analyzed apps 340found 0
+analyzed apps 351found 0
+analyzed apps 364found 0
+analyzed apps 372found 0
+analyzed apps 398found 0
+analyzed apps 406found 0
+analyzed apps 420found 0
+analyzed apps 435found 0
+analyzed apps 446found 0
+analyzed apps 462found 0
+analyzed apps 490found 0
+analyzed apps 495found 0
+analyzed apps 510found 0
+analyzed apps 542found 0
+analyzed apps 550found 0
+analyzed apps 559found 0
+analyzed apps 571found 0
+analyzed apps 587found 0
+analyzed apps 590found 0
+analyzed apps 599found 0
+analyzed apps 617found 0
+analyzed apps 629found 0
+analyzed apps 640found 0
+analyzed apps 667found 0
+analyzed apps 698found 0
+analyzed apps 716found 0
+analyzed apps 725found 0
+analyzed apps 727found 0
+analyzed apps 735found 0
+analyzed apps 750found 0
+analyzed apps 764found 0
+analyzed apps 781found 0
+analyzed apps 788found 0
+analyzed apps 812found 0
+analyzed apps 819found 0
+analyzed apps 855found 0
+analyzed apps 896found 0
+analyzed apps 899found 0
+analyzed apps 923found 0
+analyzed apps 933found 0
+analyzed apps 948found 0
+analyzed apps 957found 0
+analyzed apps 970found 0
+analyzed apps 978found 0
+analyzed apps 1003found 0
+analyzed apps 1014found 0
+analyzed apps 1025found 0
+analyzed apps 1060found 0
+analyzed apps 1070found 0
+analyzed apps 1101found 0
+analyzed apps 1137found 0
+analyzed apps 1155found 0
+analyzed apps 1172found 0
+analyzed apps 1180found 0
+analyzed apps 1194found 0
+analyzed apps 1204found 0
+analyzed apps 1225found 0
+analyzed apps 1233found 0
+analyzed apps 1240found 0
+analyzed apps 1248found 0
+analyzed apps 1254found 0
+analyzed apps 1261found 0
+analyzed apps 1296found 0
+analyzed apps 1296found 0
+analyzed apps 1299found 0
+analyzed apps 1314found 0
+analyzed apps 1315found 0
+analyzed apps 1323found 0
+analyzed apps 1350found 0
+analyzed apps 1361found 0
+analyzed apps 1369found 0
+analyzed apps 1373found 0
+analyzed apps 1385found 0
+analyzed apps 1398found 0
+analyzed apps 1404found 0
+analyzed apps 1423found 0
+analyzed apps 1428found 0
+analyzed apps 1437found 0
+analyzed apps 1453found 0
+analyzed apps 1465found 0
+analyzed apps 1478found 0
+analyzed apps 1497found 0
+analyzed apps 1520found 0
+analyzed apps 1536found 0
+analyzed apps 1540found 0
+analyzed apps 1561found 0
+analyzed apps 1572found 0
+analyzed apps 1581found 0
+analyzed apps 1593found 0
+analyzed apps 1608found 0
+analyzed apps 1616found 0
+analyzed apps 1621found 0
+analyzed apps 1633found 0
+analyzed apps 1634found 0
+analyzed apps 1655found 0
+analyzed apps 1679found 0
+analyzed apps 1698found 0
+analyzed apps 1706found 0
+analyzed apps 1741found 0
+analyzed apps 1766found 0
+analyzed apps 1803found 0
+analyzed apps 1823found 0
+analyzed apps 1832found 0
+analyzed apps 1849found 0
+analyzed apps 1857found 0
+analyzed apps 1857found 0
+analyzed apps 1864found 0
+analyzed apps 1879found 0
+analyzed apps 1918found 0
+analyzed apps 1929found 0
+analyzed apps 1934found 0
+analyzed apps 1949found 0
+analyzed apps 1968found 0
+analyzed apps 1990found 0
+analyzed apps 2003found 0
+analyzed apps 2013found 0
+analyzed apps 2023found 0
+analyzed apps 2046found 0
+analyzed apps 2076found 0
+analyzed apps 2086found 0
+analyzed apps 2117found 0
+analyzed apps 2142found 0
+analyzed apps 2152found 0
+analyzed apps 2170found 0
+analyzed apps 2187found 0
+analyzed apps 2204found 0
+analyzed apps 2211found 0
+analyzed apps 2222found 0
+analyzed apps 2223found 0
+analyzed apps 2229found 0
+analyzed apps 2239found 0
+analyzed apps 2247found 0
+analyzed apps 2262found 0
+analyzed apps 2274found 0
+analyzed apps 2280found 0
+analyzed apps 2324found 0
+analyzed apps 2339found 0
+analyzed apps 2359found 0
+analyzed apps 2372found 0
+analyzed apps 2385found 0
+analyzed apps 2389found 0
+analyzed apps 2407found 0
+analyzed apps 2416found 0
+analyzed apps 2425found 0
+analyzed apps 2436found 0
+analyzed apps 2446found 0
+analyzed apps 2452found 0
+analyzed apps 2460found 0
+analyzed apps 2481found 0
+analyzed apps 2488found 0
+analyzed apps 2522found 0
+analyzed apps 2537found 0
+analyzed apps 2546found 0
+analyzed apps 2554found 0
+analyzed apps 2571found 0
+analyzed apps 2580found 0
+analyzed apps 2590found 0
+analyzed apps 2607found 0
+analyzed apps 2631found 0
+analyzed apps 2635found 0
+analyzed apps 2643found 0
+analyzed apps 2669found 0
+analyzed apps 2688found 0
+analyzed apps 2700found 0
+analyzed apps 2722found 0
+analyzed apps 2731found 0
+analyzed apps 2739found 0
+analyzed apps 2749found 0
+analyzed apps 2761found 0
+analyzed apps 2776found 0
+analyzed apps 2790found 0
+analyzed apps 2791found 0
+analyzed apps 2804found 0
+analyzed apps 2831found 0
+analyzed apps 2856found 0
+analyzed apps 2863found 0
+analyzed apps 2890found 0
+analyzed apps 2896found 0
+analyzed apps 2906found 0
+analyzed apps 2920found 0
+analyzed apps 2941found 0
+analyzed apps 2977found 0
+analyzed apps 2991found 0
+analyzed apps 2999found 0
+analyzed apps 3008found 0
+analyzed apps 3024found 0
+analyzed apps 3030found 0
+analyzed apps 3045found 0
+analyzed apps 3053found 0
+analyzed apps 3078found 0
+analyzed apps 3083found 0
+analyzed apps 3114found 0
+analyzed apps 3141found 0
+analyzed apps 3155found 0
+analyzed apps 3169found 0
+analyzed apps 3179found 0
+analyzed apps 3186found 0
+analyzed apps 3190found 0
+analyzed apps 3200found 0
+analyzed apps 3201found 0
+analyzed apps 3212found 0
+analyzed apps 3217found 0
+analyzed apps 3269found 0
+analyzed apps 3277found 0
+analyzed apps 3283found 0
+analyzed apps 3296found 0
+analyzed apps 3303found 0
+analyzed apps 3318found 0
+analyzed apps 3339found 0
+analyzed apps 3351found 0
+analyzed apps 3357found 0
+analyzed apps 3363found 0
+analyzed apps 3378found 0
+analyzed apps 3383found 0
+analyzed apps 3406found 0
+analyzed apps 3433found 0
+analyzed apps 3451found 0
+analyzed apps 3456found 0
+analyzed apps 3479found 0
+analyzed apps 3493found 0
+analyzed apps 3500found 0
+analyzed apps 3510found 0
+analyzed apps 3529found 0
+analyzed apps 3542found 0
+analyzed apps 3551found 0
+analyzed apps 3560found 0
+not found Personalization-DATA.json  1
+not found Travel & Local-DATA.json  1
+not found News & Magazines-DATA.json  1
+not found Transportation-DATA.json  1
+not found Sports-DATA.json  1
+not found Widgets-DATA.json  1
+not found Education-DATA.json  1
+not found Shoopping-DATA.json  1
+not found Photography-DATA.json  1
+not found Entertainment -DATA.json  1
+not found Music & Audio-DATA.json  1
+not found Health & Fitness-DATA.json  1
+not found Business-DATA.json  1
+not found Medical-DATA.json  1
+not found Productivity-DATA.json  1
+not found Game-DATA.json  1
+not found Finance-DATA.json  1
+not found Tools-DATA.json  1
+not found Social-DATA.json  1
+not found Weather-DATA.json  1
+not found Live Wallpaper-DATA.json  1
+not found Media & Video-DATA.json  1
+not found Lifestyle-DATA.json  1
+not found Libraries & Demo-DATA.json  1
+not found Communication-DATA.json  1
+not found Comics-DATA.json  1
+not found Book & References-DATA.json  1
+
