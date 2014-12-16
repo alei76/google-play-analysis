@@ -69,6 +69,7 @@ public class LoadData {
 				if (cont % (numberFiles / 10) == 0 && cont != 1) {
 					percent++;
 					System.out.println(percent + "%");
+					if(percent == 3) break;
 				}
 
 			}
