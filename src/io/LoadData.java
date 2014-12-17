@@ -2,13 +2,11 @@ package io;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileFilter;
 import java.io.FileReader;
 import java.io.IOException;
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -40,9 +38,14 @@ public class LoadData {
 		long bytes = 0;
 		final Gson gson = new GsonBuilder().disableHtmlEscaping().create();
 		// Load form Json file
-		File[] files = new File(path).listFiles();
+		File[] files = new File(path).listFiles(new FileFilter() {			
+			@Override
+			public boolean accept(File pathname) {
+				return pathname.getName().endsWith(".json");
+			}
+		});
 		int numberFiles = files.length;
-		int percent = 0;
+
 		System.out.println("");
 
 		for (File file : files) {
@@ -66,11 +69,7 @@ public class LoadData {
 				}
 				cont++;
 
-				if (cont % (numberFiles / 10) == 0 && cont != 1) {
-					percent++;
-					System.out.println(percent + "%");
-					if(percent == 3) break;
-				}
+				System.out.println("done = " + (double) cont * 100 / numberFiles + "%");
 
 			}
 		}

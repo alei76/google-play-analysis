@@ -7,6 +7,11 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
+import org.aksw.tsoru.textmining.model.ARFFOutput;
+import org.aksw.tsoru.textmining.model.CSVOutput;
+import org.aksw.tsoru.textmining.model.Output;
+import org.aksw.tsoru.textmining.model.RawOutput;
+
 import data.AndroidApp;
 import data.Review;
 
@@ -15,43 +20,27 @@ import data.Review;
  *
  */
 public class DatasetBuilder {
-
+		
 	public static void main(String[] args) throws FileNotFoundException {
 		
-		DatasetBuilder.build("data/", "etc/reviews.arff");
+		DatasetBuilder.build("data/", "etc/reviews", new RawOutput());
+		DatasetBuilder.build("data/", "etc/reviews", new CSVOutput());
+		DatasetBuilder.build("data/", "etc/reviews", new ARFFOutput());
 		
 	}
 
-	private static void build(String input, String output) throws FileNotFoundException {
+	private static void build(String input, String output, Output type) throws FileNotFoundException {
 		
-		PrintWriter pw = new PrintWriter(new File(output));
-		pw.write(getHeader());
+		PrintWriter pw = new PrintWriter(new File(output) + type.getExt());
+		pw.write(type.getHeader());
 		ArrayList<AndroidApp> data =  LoadData.loadData(input, true);
 		for(AndroidApp app : data) {
 			for(Review rev : app.getReviews()) {
-				pw.write(preprocess(rev.getBody()));
+				pw.write(type.preprocess(rev.getBody()));
 			}
 		}
 		pw.close();
 		
-	}
-
-	private static String getHeader() {
-		return "@relation reviews\n\n@attribute body string\n\n@data\n";
-	}
-
-	private static String preprocess(String body) {
-		// all reviews end with " Full Review" (length=12)
-		body = body.substring(0, body.length() - 12);
-		// one result per line
-		body = body.replaceAll("\n", " ");
-		// strip out non-valid characters
-		body = body.replaceAll("[^\\x20-\\x7e]", " ");
-		// quotes
-		body = "\"" + body.replaceAll("\"", "'") + "\"";
-		// carriage return
-		body = body + "\n";
-		return body;
 	}
 
 }
