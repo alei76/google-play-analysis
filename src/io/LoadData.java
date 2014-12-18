@@ -70,7 +70,8 @@ public class LoadData {
 				cont++;
 
 				System.out.println("done = " + (double) cont * 100 / numberFiles + "%");
-
+				
+				if(cont == 3) break;
 			}
 		}
 		if (verbose) {

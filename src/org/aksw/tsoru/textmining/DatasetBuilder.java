@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 import org.aksw.tsoru.textmining.model.ARFFOutput;
 import org.aksw.tsoru.textmining.model.CSVOutput;
+import org.aksw.tsoru.textmining.model.MapReduceOutput;
 import org.aksw.tsoru.textmining.model.Output;
 import org.aksw.tsoru.textmining.model.RawOutput;
 
@@ -23,23 +24,37 @@ public class DatasetBuilder {
 		
 	public static void main(String[] args) throws FileNotFoundException {
 		
-		DatasetBuilder.build("data/", "etc/reviews", new RawOutput());
-		DatasetBuilder.build("data/", "etc/reviews", new CSVOutput());
-		DatasetBuilder.build("data/", "etc/reviews", new ARFFOutput());
+//		DatasetBuilder.build("data/", "etc/reviews", new RawOutput());
+//		DatasetBuilder.build("data/", "etc/reviews", new CSVOutput());
+//		DatasetBuilder.build("data/", "etc/reviews", new ARFFOutput());
+		DatasetBuilder.build("data/", "etc/mapreduce", new MapReduceOutput());
 		
 	}
 
 	private static void build(String input, String output, Output type) throws FileNotFoundException {
-		
-		PrintWriter pw = new PrintWriter(new File(output) + type.getExt());
-		pw.write(type.getHeader());
-		ArrayList<AndroidApp> data =  LoadData.loadData(input, true);
-		for(AndroidApp app : data) {
-			for(Review rev : app.getReviews()) {
-				pw.write(type.preprocess(rev.getBody()));
+
+		ArrayList<AndroidApp> data = LoadData.loadData(input, true);
+
+		if(type instanceof MapReduceOutput) {
+			new File(output).mkdirs();
+			for(AndroidApp app : data) {
+				new File(output+"/"+app.getCategory()).mkdirs();
+				for(Review rev : app.getReviews()) {
+					PrintWriter pw = new PrintWriter(new File(output + "/"
+							+ app.getCategory() + "/" + app.getId() + type.getExt() + type.getExt()));
+					pw.write(type.preprocess(rev.getBody()));
+					pw.close();
+				}
 			}
+			
+		} else {
+			PrintWriter pw = new PrintWriter(new File(output + type.getExt()));
+			pw.write(type.getHeader());
+			for(AndroidApp app : data)
+				for(Review rev : app.getReviews())
+					pw.write(type.preprocess(rev.getBody()));
+			pw.close();
 		}
-		pw.close();
 		
 	}
 
