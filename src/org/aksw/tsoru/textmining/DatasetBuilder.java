@@ -7,11 +7,9 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
-import org.aksw.tsoru.textmining.model.ARFFOutput;
-import org.aksw.tsoru.textmining.model.CSVOutput;
-import org.aksw.tsoru.textmining.model.MapReduceOutput;
+import org.aksw.tsoru.textmining.model.InFoldersOutput;
+import org.aksw.tsoru.textmining.model.InOneFolderOutput;
 import org.aksw.tsoru.textmining.model.Output;
-import org.aksw.tsoru.textmining.model.RawOutput;
 
 import data.AndroidApp;
 import data.Review;
@@ -27,26 +25,39 @@ public class DatasetBuilder {
 //		DatasetBuilder.build("data/", "etc/reviews", new RawOutput());
 //		DatasetBuilder.build("data/", "etc/reviews", new CSVOutput());
 //		DatasetBuilder.build("data/", "etc/reviews", new ARFFOutput());
-		DatasetBuilder.build("data/", "etc/mapreduce", new MapReduceOutput());
+//		DatasetBuilder.build("data/", "etc/infolders", new InFoldersOutput());
+		DatasetBuilder.build("data/", "etc/inonefolder", new InOneFolderOutput());
 		
 	}
 
-	private static void build(String input, String output, Output type) throws FileNotFoundException {
+	public static void build(String input, String output, Output type) throws FileNotFoundException {
 
 		ArrayList<AndroidApp> data = LoadData.loadData(input, true);
 
-		if(type instanceof MapReduceOutput) {
+		if(type instanceof InFoldersOutput) {
 			new File(output).mkdirs();
 			for(AndroidApp app : data) {
-				new File(output+"/"+app.getCategory()).mkdirs();
-				for(Review rev : app.getReviews()) {
+				new File(output+"/"+app.getCategory().replaceAll(" ", "_")).mkdirs();
+				for(int i=0; i<app.getReviews().size(); i++) {
+					Review rev = app.getReviews().get(i);
 					PrintWriter pw = new PrintWriter(new File(output + "/"
-							+ app.getCategory() + "/" + app.getId() + type.getExt() + type.getExt()));
+							+ app.getCategory().replaceAll(" ", "_") + "/" + app.getId() + "_" + i + type.getExt()));
 					pw.write(type.preprocess(rev.getBody()));
 					pw.close();
 				}
 			}
 			
+		} else if(type instanceof InOneFolderOutput) {
+			new File(output).mkdirs();
+			for(AndroidApp app : data) {
+				for(int i=0; i<app.getReviews().size(); i++) {
+					Review rev = app.getReviews().get(i);
+					PrintWriter pw = new PrintWriter(new File(output + "/"
+							+ app.getId() + "_" + i + type.getExt()));
+					pw.write(type.preprocess(rev.getBody()));
+					pw.close();
+				}
+			}
 		} else {
 			PrintWriter pw = new PrintWriter(new File(output + type.getExt()));
 			pw.write(type.getHeader());

@@ -4,7 +4,7 @@ package org.aksw.tsoru.textmining.model;
  * @author Tommaso Soru <t.soru@informatik.uni-leipzig.de>
  *
  */
-public class MapReduceOutput extends Output {
+public class InOneFolderOutput extends Output {
 
 	@Override
 	public String getExt() {
