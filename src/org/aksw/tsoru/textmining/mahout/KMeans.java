@@ -1,14 +1,8 @@
 package org.aksw.tsoru.textmining.mahout;
 
-import java.io.IOException;
 import java.util.HashMap;
 
-import org.apache.hadoop.io.IntWritable;
-import org.apache.hadoop.io.Text;
-import org.apache.mahout.clustering.Cluster;
-import org.apache.mahout.clustering.classify.WeightedPropertyVectorWritable;
 import org.apache.mahout.clustering.kmeans.KMeansDriver;
-import org.apache.mahout.math.VectorWritable;
 import org.apache.mahout.text.SequenceFilesFromDirectory;
 import org.apache.mahout.vectorizer.SparseVectorsFromSequenceFiles;
 
@@ -51,14 +45,7 @@ public class KMeans {
 			int kmresult = d.run(kmparam);
 			System.out.println("k-means status: "+kmresult);
 
-			SequenceReader reader = new SequenceReader(output + "/" + Cluster.CLUSTERED_POINTS_DIR + "/part-m-00000", new IntWritable(), new WeightedPropertyVectorWritable());
-	        HashMap<String, Integer> clusterCount = new HashMap<String, Integer>();
-			while(reader.next()) {
-				String key = reader.getKey().toString();
-				Integer v = clusterCount.get(key);
-				clusterCount.put(key, v == null ? 1 : v + 1);
-			}
-			reader.close();
+	        HashMap<String, Integer> clusterCount = ShowResults.centroidSizes();
 			
 	        System.out.println("CLUSTERS\n========\nID\tSIZE");
 			for(String key : clusterCount.keySet())
@@ -68,16 +55,6 @@ public class KMeans {
 		
 	}
 		
-	@SuppressWarnings("unused")
-	private void printTfidf() throws IOException {
-		
-		SequenceReader vec = new SequenceReader(vectors + "/tfidf-vectors/part-r-00000", new Text(), new VectorWritable());
-		System.out.println();
-		while(vec.next())
-			System.out.println(vec.getKey().toString() + " => " + vec.getValue().toString());
-        vec.close();
-		
-	}
 
 //	{
 //		int minSupport = 5;
