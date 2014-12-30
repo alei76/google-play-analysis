@@ -16,7 +16,7 @@ public class KMeans {
 							sequence = "etc/sequence",
 							vectors = "etc/vectors",
 							clusters = "etc/clusters",
-							output = "etc/output";
+							output = "etc/output-k10-x20";
 
 	public static void main(String[] args) throws Exception {
 		
@@ -40,7 +40,7 @@ public class KMeans {
 		if(arg <= 2) {
 			
 			String[] kmparam = {"-i", vectors + "/tfidf-vectors", "-c", clusters, "-o", output,
-					"-k", "5", "-x", "10", "-cl"};
+					"-k", "10", "-x", "20", "-cl"};
 			KMeansDriver d = new KMeansDriver();
 			int kmresult = d.run(kmparam);
 			System.out.println("k-means status: "+kmresult);
@@ -50,6 +50,8 @@ public class KMeans {
 	        System.out.println("CLUSTERS\n========\nID\tSIZE");
 			for(String key : clusterCount.keySet())
 				System.out.println(key + "\t" + clusterCount.get(key));
+			
+			ShowResults.main(new String[]{output});
 
 		}
 		

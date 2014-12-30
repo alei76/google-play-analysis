@@ -1,11 +1,7 @@
 package org.aksw.tsoru.textmining.mahout;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.TreeSet;
 
 import org.aksw.tsoru.textmining.model.Cluster;
@@ -15,7 +11,6 @@ import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.Writable;
 import org.apache.mahout.clustering.classify.WeightedPropertyVectorWritable;
-import org.apache.mahout.clustering.classify.WeightedVectorWritable;
 import org.apache.mahout.clustering.iterator.ClusterWritable;
 import org.apache.mahout.math.NamedVector;
 import org.apache.mahout.math.Vector.Element;
@@ -28,6 +23,9 @@ import org.apache.mahout.math.VectorWritable;
 public class ShowResults {
 
 	public static void main(String[] args) throws IOException {
+		
+		String outputdir = args[0];
+		
 //		SequenceReader reader = new SequenceReader("etc/vectors/tfidf-vectors/part-r-00000", new Text(), new VectorWritable());
 //		while(reader.next()) {
 //			System.out.println(reader.getKey() + "\t" + reader.getValue());
@@ -68,7 +66,7 @@ public class ShowResults {
 		for(String c : clusters.keySet()) {
 //			System.out.println(MapUtils.sortByComparator(clusters.get(c).getWordcount(), false));
 			HashMap<String, Integer> map = MapUtils.sortByComparator(clusters.get(c).getWordcount(), false);
-			DataIO.serialize(map, "etc/wordcloud_" + c);
+			DataIO.serialize(map, outputdir + "/wordcloud_" + c);
 			int i = 0;
 			System.out.println("Top 100 words of cluster "+c);
 			for(String word : map.keySet()) {
