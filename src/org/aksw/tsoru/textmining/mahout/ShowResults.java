@@ -39,7 +39,7 @@ public class ShowResults {
 //		for(String key : clusterCount.keySet())
 //			System.out.println(key + "\t" + clusterCount.get(key));
 		
-		HashMap<String, String> clustering = clusteredPoints();
+		HashMap<String, String> clustering = clusteredPoints(outputdir);
 		HashMap<Integer, String> dict = dictionary();
 		
 		TreeSet<String> clusterNames = new TreeSet<String>();
@@ -84,16 +84,19 @@ public class ShowResults {
 	 * @return
 	 * @throws IOException
 	 */
-	public static HashMap<String, Integer> centroidSizes() throws IOException {
+	public static HashMap<String, Integer> centroidSizes(String outputdir) throws IOException {
         HashMap<String, Integer> clusterCount = new HashMap<String, Integer>();
-		SequenceReader reader = new SequenceReader("etc/output/clusteredPoints/part-m-00000", new IntWritable(), new WeightedPropertyVectorWritable());
-		while(reader.next()) {
-			System.out.println(reader.getKey() + "\t" + instanceName(reader.getValue()));
-			String centroID = reader.getKey().toString();
-			Integer v = clusterCount.get(centroID);
-			clusterCount.put(centroID, v == null ? 1 : v + 1);
+        for(int i=0; i<=20; i++) {
+        	String suffix = (i<10) ? "0"+i : ""+i;
+			SequenceReader reader = new SequenceReader(outputdir + "/clusteredPoints/part-m-000" + suffix, new IntWritable(), new WeightedPropertyVectorWritable());
+//			System.out.println(reader.getKey() + "\t" + instanceName(reader.getValue()));
+			while(reader.next()) {
+				String centroID = reader.getKey().toString();
+				Integer v = clusterCount.get(centroID);
+				clusterCount.put(centroID, v == null ? 1 : v + 1);
+			}
+			reader.close();
 		}
-		reader.close();
 		return clusterCount;
 	}
 
@@ -103,11 +106,11 @@ public class ShowResults {
 	 * @return
 	 * @throws IOException
 	 */
-	public static HashMap<String, String> clusteredPoints() throws IOException {
+	public static HashMap<String, String> clusteredPoints(String outputdir) throws IOException {
         HashMap<String, String> map = new HashMap<String, String>();
         for(int i=0; i<=20; i++) {
         	String suffix = (i<10) ? "0"+i : ""+i;
-			SequenceReader reader = new SequenceReader("etc/output/clusteredPoints/part-m-000" + suffix, new IntWritable(), new WeightedPropertyVectorWritable());
+			SequenceReader reader = new SequenceReader(outputdir + "/clusteredPoints/part-m-000" + suffix, new IntWritable(), new WeightedPropertyVectorWritable());
 			while(reader.next()) {
 	//			System.out.println(reader.getKey() + "\t" + instanceName(reader.getValue()));
 				map.put(instanceName(reader.getValue()), reader.getKey().toString());

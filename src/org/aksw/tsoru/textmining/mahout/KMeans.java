@@ -45,7 +45,11 @@ public class KMeans {
 			int kmresult = d.run(kmparam);
 			System.out.println("k-means status: "+kmresult);
 
-	        HashMap<String, Integer> clusterCount = ShowResults.centroidSizes();
+		}
+		
+		if(arg <= 3) {
+
+	        HashMap<String, Integer> clusterCount = ShowResults.centroidSizes(output);
 			
 	        System.out.println("CLUSTERS\n========\nID\tSIZE");
 			for(String key : clusterCount.keySet())
