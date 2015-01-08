@@ -49,8 +49,8 @@ public class WordAnalysis {
 		for(String key : map.keySet()) {
 			if(!multi.contains(key)) {
 				if(partition.containsKey(key)) {
-						partition.remove(key);
-						multi.add(key);
+					partition.remove(key);
+					multi.add(key);
 				} else
 					partition.put(key, new Value(map.get(key), filepath));
 			}

@@ -86,7 +86,7 @@ public class ShowResults {
 	 */
 	public static HashMap<String, Integer> centroidSizes(String outputdir) throws IOException {
         HashMap<String, Integer> clusterCount = new HashMap<String, Integer>();
-        for(int i=0; i<=20; i++) {
+        for(int i=0; i<=0; i++) {
         	String suffix = (i<10) ? "0"+i : ""+i;
 			SequenceReader reader = new SequenceReader(outputdir + "/clusteredPoints/part-m-000" + suffix, new IntWritable(), new WeightedPropertyVectorWritable());
 //			System.out.println(reader.getKey() + "\t" + instanceName(reader.getValue()));
@@ -108,7 +108,7 @@ public class ShowResults {
 	 */
 	public static HashMap<String, String> clusteredPoints(String outputdir) throws IOException {
         HashMap<String, String> map = new HashMap<String, String>();
-        for(int i=0; i<=20; i++) {
+        for(int i=0; i<=0; i++) {
         	String suffix = (i<10) ? "0"+i : ""+i;
 			SequenceReader reader = new SequenceReader(outputdir + "/clusteredPoints/part-m-000" + suffix, new IntWritable(), new WeightedPropertyVectorWritable());
 			while(reader.next()) {
@@ -172,12 +172,17 @@ public class ShowResults {
 	 * 
 	 * @throws IOException
 	 */
-	public static void tfidf() throws IOException {
+	public static HashMap<String, VectorWritable> tfidf() throws IOException {
+		HashMap<String, VectorWritable> map = new HashMap<String, VectorWritable>();
 		SequenceReader reader = new SequenceReader("etc/vectors/tfidf-vectors/part-r-00000", new Text(), new VectorWritable());
 		while(reader.next()) {
 			System.out.println(reader.getKey() + "\t" + reader.getValue());
+			String k = reader.getKey().toString();
+			if(k.equals("/pos.txt") || k.equals("/neg.txt"))
+				map.put(k, new VectorWritable(((VectorWritable) reader.getValue()).get()));
 		}
 		reader.close();
+		return map;
 	}
 
 }

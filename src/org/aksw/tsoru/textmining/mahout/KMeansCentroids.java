@@ -10,14 +10,17 @@ import org.apache.mahout.vectorizer.SparseVectorsFromSequenceFiles;
  * @author Tommaso Soru <t.soru@informatik.uni-leipzig.de>
  *
  */
-public class KMeans {
+public class KMeansCentroids {
 	
-	private static String 	input = "etc/inonefolder",
+	private static String 	input = "etc/inonefolder_tiny",
 							sequence = "etc/sequence",
 							vectors = "etc/vectors",
-							clusters = "etc/clusters",
-							output = "etc/output-k10-x20";
+							centroids = "etc/centroids",
+							output = "etc/output-perflvl-x20";
 
+	/**
+	 *  Assumed <i>pos.txt</i> and <i>neg.txt</i> as copied into: <i>/etc/inonefolder/</i>.
+	 */
 	public static void main(String[] args) throws Exception {
 		
 		int arg = Integer.parseInt(args[0]);
@@ -39,8 +42,10 @@ public class KMeans {
 		
 		if(arg <= 2) {
 			
-			String[] kmparam = {"-i", vectors + "/tfidf-vectors", "-c", clusters, "-o", output,
-					"-k", "10", "-x", "20", "-cl"};
+			Centroids.generate();
+			
+			String[] kmparam = {"-i", vectors + "/tfidf-vectors", "-c", centroids, "-o", output,
+					"-x", "20", "-cl"};
 			KMeansDriver d = new KMeansDriver();
 			int kmresult = d.run(kmparam);
 			System.out.println("k-means status: "+kmresult);

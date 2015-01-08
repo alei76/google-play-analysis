@@ -1,6 +1,6 @@
 package org.aksw.tsoru.textmining;
 
-import org.aksw.tsoru.textmining.mahout.KMeans;
+import org.aksw.tsoru.textmining.mahout.KMeansCentroids;
 import org.aksw.tsoru.textmining.model.InOneFolderOutput;
 
 /**
@@ -12,7 +12,7 @@ public class Pipeline {
 	public static void main(String[] args) throws Exception {
 		
 		DatasetBuilder.build("data/", "etc/inonefolder", new InOneFolderOutput());
-		KMeans.main(new String[]{});
+		KMeansCentroids.main(new String[]{});
 		
 	}
 
