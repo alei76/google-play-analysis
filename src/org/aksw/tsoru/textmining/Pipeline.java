@@ -1,5 +1,6 @@
 package org.aksw.tsoru.textmining;
 
+import org.aksw.tsoru.textmining.mahout.Centroids;
 import org.aksw.tsoru.textmining.mahout.KMeansCentroids;
 import org.aksw.tsoru.textmining.model.InOneFolderOutput;
 
@@ -10,9 +11,12 @@ import org.aksw.tsoru.textmining.model.InOneFolderOutput;
 public class Pipeline {
 
 	public static void main(String[] args) throws Exception {
+
+		String prefix = args[0];
 		
 		DatasetBuilder.build("data/", "etc/inonefolder", new InOneFolderOutput());
-		KMeansCentroids.main(new String[]{});
+		Centroids.copy(prefix);
+		KMeansCentroids.main(new String[]{"0", prefix});
 		
 	}
 

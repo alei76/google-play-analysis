@@ -1,5 +1,6 @@
 package org.aksw.tsoru.textmining.mahout;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.TreeSet;
@@ -86,17 +87,20 @@ public class ShowResults {
 	 */
 	public static HashMap<String, Integer> centroidSizes(String outputdir) throws IOException {
         HashMap<String, Integer> clusterCount = new HashMap<String, Integer>();
-        for(int i=0; i<=0; i++) {
-        	String suffix = (i<10) ? "0"+i : ""+i;
-			SequenceReader reader = new SequenceReader(outputdir + "/clusteredPoints/part-m-000" + suffix, new IntWritable(), new WeightedPropertyVectorWritable());
-//			System.out.println(reader.getKey() + "\t" + instanceName(reader.getValue()));
-			while(reader.next()) {
-				String centroID = reader.getKey().toString();
-				Integer v = clusterCount.get(centroID);
-				clusterCount.put(centroID, v == null ? 1 : v + 1);
-			}
-			reader.close();
-		}
+        File testDirectory = new File(outputdir + "/clusteredPoints/");
+        File[] files = testDirectory.listFiles();
+        for (File file : files) {
+            if ( (file.isDirectory() == false) && (file.getName().startsWith("part") ) ) {
+    			SequenceReader reader = new SequenceReader(file.getAbsolutePath(), new IntWritable(), new WeightedPropertyVectorWritable());
+//    			System.out.println(reader.getKey() + "\t" + instanceName(reader.getValue()));
+    			while(reader.next()) {
+    				String centroID = reader.getKey().toString();
+    				Integer v = clusterCount.get(centroID);
+    				clusterCount.put(centroID, v == null ? 1 : v + 1);
+    			}
+    			reader.close();
+            }
+        }
 		return clusterCount;
 	}
 
@@ -108,15 +112,20 @@ public class ShowResults {
 	 */
 	public static HashMap<String, String> clusteredPoints(String outputdir) throws IOException {
         HashMap<String, String> map = new HashMap<String, String>();
-        for(int i=0; i<=0; i++) {
-        	String suffix = (i<10) ? "0"+i : ""+i;
-			SequenceReader reader = new SequenceReader(outputdir + "/clusteredPoints/part-m-000" + suffix, new IntWritable(), new WeightedPropertyVectorWritable());
-			while(reader.next()) {
-	//			System.out.println(reader.getKey() + "\t" + instanceName(reader.getValue()));
-				map.put(instanceName(reader.getValue()), reader.getKey().toString());
-			}
-			reader.close();
+
+        File testDirectory = new File(outputdir + "/clusteredPoints/");
+        File[] files = testDirectory.listFiles();
+        for (File file : files) {
+            if ( (file.isDirectory() == false) && (file.getName().startsWith("part") ) ) {
+    			SequenceReader reader = new SequenceReader(file.getAbsolutePath(), new IntWritable(), new WeightedPropertyVectorWritable());
+    			while(reader.next()) {
+//    				System.out.println(reader.getKey() + "\t" + instanceName(reader.getValue()));
+    				map.put(instanceName(reader.getValue()), reader.getKey().toString());
+    			}
+    			reader.close();
+            }
         }
+
 		return map;
 	}
 
@@ -172,13 +181,13 @@ public class ShowResults {
 	 * 
 	 * @throws IOException
 	 */
-	public static HashMap<String, VectorWritable> tfidf() throws IOException {
+	public static HashMap<String, VectorWritable> tfidf(String prefix) throws IOException {
 		HashMap<String, VectorWritable> map = new HashMap<String, VectorWritable>();
 		SequenceReader reader = new SequenceReader("etc/vectors/tfidf-vectors/part-r-00000", new Text(), new VectorWritable());
 		while(reader.next()) {
 			System.out.println(reader.getKey() + "\t" + reader.getValue());
 			String k = reader.getKey().toString();
-			if(k.equals("/pos.txt") || k.equals("/neg.txt"))
+			if(k.equals("/"+prefix+"_pos.txt") || k.equals("/"+prefix+"_neg.txt"))
 				map.put(k, new VectorWritable(((VectorWritable) reader.getValue()).get()));
 		}
 		reader.close();

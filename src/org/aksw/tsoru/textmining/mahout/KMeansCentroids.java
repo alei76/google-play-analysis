@@ -12,18 +12,19 @@ import org.apache.mahout.vectorizer.SparseVectorsFromSequenceFiles;
  */
 public class KMeansCentroids {
 	
-	private static String 	input = "etc/inonefolder_tiny",
+	private static String 	input = "etc/inonefolder",
 							sequence = "etc/sequence",
 							vectors = "etc/vectors",
 							centroids = "etc/centroids",
 							output = "etc/output-perflvl-x20";
 
 	/**
-	 *  Assumed <i>pos.txt</i> and <i>neg.txt</i> as copied into: <i>/etc/inonefolder/</i>.
+	 *  Assumed <i>[prefix]_pos.txt</i> and <i>[prefix]_neg.txt</i> as copied into: <i>etc/inonefolder/</i>.
 	 */
 	public static void main(String[] args) throws Exception {
 		
 		int arg = Integer.parseInt(args[0]);
+		String prefix = args[1];
 		
 		if(arg <= 0) {
 			SequenceFilesFromDirectory s = new SequenceFilesFromDirectory();
@@ -42,7 +43,7 @@ public class KMeansCentroids {
 		
 		if(arg <= 2) {
 			
-			Centroids.generate();
+			Centroids.generate(prefix);
 			
 			String[] kmparam = {"-i", vectors + "/tfidf-vectors", "-c", centroids, "-o", output,
 					"-x", "20", "-cl"};

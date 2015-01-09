@@ -1,6 +1,9 @@
 package org.aksw.tsoru.textmining.mahout;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.util.HashMap;
 
 import org.apache.hadoop.io.Text;
@@ -33,14 +36,15 @@ public class Centroids {
 		reader.close();
 	}
 
-	public static void generate() throws IOException {
-		HashMap<String, VectorWritable> map = ShowResults.tfidf();
+	public static void generate(String prefix) throws IOException {
+		HashMap<String, VectorWritable> map = ShowResults.tfidf(prefix);
 		System.out.println(map);
 				
-		VectorWritable pos = map.get("/pos.txt");
+		VectorWritable pos = map.get("/"+prefix+"_pos.txt");
+		System.out.println("/"+prefix+"_pos.txt");
 		Vector vpos = pos.get();
 		int nwords = vpos.size();
-		VectorWritable neg = map.get("/neg.txt");
+		VectorWritable neg = map.get("/"+prefix+"_neg.txt");
 		Vector vneg = neg.get();
 		Vector vneu = new DenseVector(nwords);
 		
@@ -74,11 +78,17 @@ public class Centroids {
 		Cluster cneu = new Kluster(vneu, 303, new EuclideanDistanceMeasure());
 		
 		SequenceWriter writer = new SequenceWriter("etc/centroids/part-r-00000", new Text(), new ClusterWritable());
-		writer.write(new Text("/pos.centroid"), new ClusterWritable(cpos));
-		writer.write(new Text("/neg.centroid"), new ClusterWritable(cneg));
-		writer.write(new Text("/neu.centroid"), new ClusterWritable(cneu));
+		writer.write(new Text("/"+prefix+"_pos.centroid"), new ClusterWritable(cpos));
+		writer.write(new Text("/"+prefix+"_neg.centroid"), new ClusterWritable(cneg));
+		writer.write(new Text("/"+prefix+"_neu.centroid"), new ClusterWritable(cneu));
 		writer.close();
 	
+	}
+
+
+	public static void copy(String prefix) throws IOException {
+		Files.copy(new File("centroids/"+prefix+"_pos.txt").toPath(), new File("etc/inonefolder/"+prefix+"_pos.txt").toPath(), StandardCopyOption.REPLACE_EXISTING);
+		Files.copy(new File("centroids/"+prefix+"_neg.txt").toPath(), new File("etc/inonefolder/"+prefix+"_neg.txt").toPath(), StandardCopyOption.REPLACE_EXISTING);
 	}
 
 }
