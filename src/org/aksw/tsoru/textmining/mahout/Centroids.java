@@ -38,49 +38,48 @@ public class Centroids {
 
 	public static void generate(String prefix) throws IOException {
 		HashMap<String, VectorWritable> map = ShowResults.tfidf(prefix);
-		System.out.println(map);
+//		System.out.println(map);
 				
 		VectorWritable pos = map.get("/"+prefix+"_pos.txt");
-		System.out.println("/"+prefix+"_pos.txt");
 		Vector vpos = pos.get();
-		int nwords = vpos.size();
+//		int nwords = vpos.size();
 		VectorWritable neg = map.get("/"+prefix+"_neg.txt");
 		Vector vneg = neg.get();
-		Vector vneu = new DenseVector(nwords);
+//		Vector vneu = new DenseVector(nwords);
 		
-		double avg = 0.0;
-		int nonzero = 0;
-		for(int j=0; j<nwords; j++) {
-			double d = vpos.getElement(j).get();
-			if(d > 0.0) {
-				avg += d;
-				nonzero++;
-//				System.out.println(nonzero + ") " + d + " -> " + avg);
-			}
-			double e = vneg.getElement(j).get();
-			if(e > 0.0) {
-				avg += e;
-				nonzero++;
-//				System.out.println(nonzero + ") " + e + " -> " + avg);
-			}
-		}
-			
-		avg = avg / nonzero;
-		
-		System.out.println("Avg = "+avg);
-		
-		for(int i=0; i<nwords; i++)
-			if(vpos.getElement(i).get() > 0.0 && vneg.getElement(i).get() > 0.0)
-				vneu.set(i, avg);
+//		double avg = 0.0;
+//		int nonzero = 0;
+//		for(int j=0; j<nwords; j++) {
+//			double d = vpos.getElement(j).get();
+//			if(d > 0.0) {
+//				avg += d;
+//				nonzero++;
+////				System.out.println(nonzero + ") " + d + " -> " + avg);
+//			}
+//			double e = vneg.getElement(j).get();
+//			if(e > 0.0) {
+//				avg += e;
+//				nonzero++;
+////				System.out.println(nonzero + ") " + e + " -> " + avg);
+//			}
+//		}
+//			
+//		avg = avg / nonzero / 100.0;
+//		
+//		System.out.println("Avg = "+avg);
+//		
+//		for(int i=0; i<nwords; i++)
+//			if(vpos.getElement(i).get() > 0.0 && vneg.getElement(i).get() > 0.0)
+//				vneu.set(i, avg);
 
 		Cluster cpos = new Kluster(vpos, 101, new EuclideanDistanceMeasure());
 		Cluster cneg = new Kluster(vneg, 202, new EuclideanDistanceMeasure());
-		Cluster cneu = new Kluster(vneu, 303, new EuclideanDistanceMeasure());
+//		Cluster cneu = new Kluster(vneu, 303, new EuclideanDistanceMeasure());
 		
 		SequenceWriter writer = new SequenceWriter("etc/centroids/part-r-00000", new Text(), new ClusterWritable());
 		writer.write(new Text("/"+prefix+"_pos.centroid"), new ClusterWritable(cpos));
 		writer.write(new Text("/"+prefix+"_neg.centroid"), new ClusterWritable(cneg));
-		writer.write(new Text("/"+prefix+"_neu.centroid"), new ClusterWritable(cneu));
+//		writer.write(new Text("/"+prefix+"_neu.centroid"), new ClusterWritable(cneu));
 		writer.close();
 	
 	}

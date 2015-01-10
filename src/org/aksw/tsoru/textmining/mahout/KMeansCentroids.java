@@ -16,7 +16,7 @@ public class KMeansCentroids {
 							sequence = "etc/sequence",
 							vectors = "etc/vectors",
 							centroids = "etc/centroids",
-							output = "etc/output-perflvl-x20";
+							output = "etc/output-";
 
 	/**
 	 *  Assumed <i>[prefix]_pos.txt</i> and <i>[prefix]_neg.txt</i> as copied into: <i>etc/inonefolder/</i>.
@@ -25,6 +25,8 @@ public class KMeansCentroids {
 		
 		int arg = Integer.parseInt(args[0]);
 		String prefix = args[1];
+		String numIter = args[2];
+		output += prefix + "-x" + numIter;
 		
 		if(arg <= 0) {
 			SequenceFilesFromDirectory s = new SequenceFilesFromDirectory();
@@ -43,10 +45,11 @@ public class KMeansCentroids {
 		
 		if(arg <= 2) {
 			
+			
 			Centroids.generate(prefix);
 			
 			String[] kmparam = {"-i", vectors + "/tfidf-vectors", "-c", centroids, "-o", output,
-					"-x", "20", "-cl"};
+					"-x", numIter, "-cl"};
 			KMeansDriver d = new KMeansDriver();
 			int kmresult = d.run(kmparam);
 			System.out.println("k-means status: "+kmresult);

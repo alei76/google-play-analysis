@@ -185,7 +185,7 @@ public class ShowResults {
 		HashMap<String, VectorWritable> map = new HashMap<String, VectorWritable>();
 		SequenceReader reader = new SequenceReader("etc/vectors/tfidf-vectors/part-r-00000", new Text(), new VectorWritable());
 		while(reader.next()) {
-			System.out.println(reader.getKey() + "\t" + reader.getValue());
+//			System.out.println(reader.getKey() + "\t" + reader.getValue());
 			String k = reader.getKey().toString();
 			if(k.equals("/"+prefix+"_pos.txt") || k.equals("/"+prefix+"_neg.txt"))
 				map.put(k, new VectorWritable(((VectorWritable) reader.getValue()).get()));
