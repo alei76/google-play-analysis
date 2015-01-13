@@ -1,26 +1,25 @@
 package org.aksw.tsoru.textmining;
 
 import org.aksw.tsoru.textmining.mahout.Centroids;
-import org.aksw.tsoru.textmining.mahout.FuzzyKMeansCentroids;
+import org.aksw.tsoru.textmining.mahout.CosSimApproach;
 import org.aksw.tsoru.textmining.model.InOneFolderOutput;
 
 /**
  * @author Tommaso Soru <t.soru@informatik.uni-leipzig.de>
  *
  */
-public class Pipeline {
+public class CosSimPipeline {
 
 	public static void main(String[] args) throws Exception {
-
-		String prefix = args[0];
+		
+		String[] centroids = {"bugginess", "performance_pos", "performance_neg", "polarity_pos", "polarity_neg"};
 		
 		DatasetBuilder.build("data/", "etc/inonefolder", new InOneFolderOutput());
 		
-		Centroids.copyPosNeg(prefix);
+		for(String c : centroids)
+			Centroids.copy(c);
 		
-//		KMeansCentroids.main(new String[]{"0", prefix});
-		FuzzyKMeansCentroids.main(new String[]{"0", prefix, "10"});
-//		CosSimApproach.main(new String[]{});
+		CosSimApproach.run(centroids);
 		
 	}
 

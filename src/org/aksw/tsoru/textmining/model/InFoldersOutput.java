@@ -20,7 +20,8 @@ public class InFoldersOutput extends Output {
 
 	@Override
 	public String preprocess(String body) {
-		// TODO Auto-generated method stub
+		// all reviews end with " Full Review" (length=12)
+		body = body.substring(0, body.length() - 12);
 		return body;
 	}
 

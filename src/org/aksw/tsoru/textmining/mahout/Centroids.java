@@ -35,6 +35,26 @@ public class Centroids {
 		}
 		reader.close();
 	}
+	
+	/**
+	 * @param posID
+	 * @param negID
+	 * @throws IOException 
+	 */
+	public static void set(String prefix, String posID, String negID) throws IOException {
+		HashMap<String, VectorWritable> map = ShowResults.getTfidf(posID, negID);
+		VectorWritable pos = map.get(posID);
+		Vector vpos = pos.get();
+		VectorWritable neg = map.get(negID);
+		Vector vneg = neg.get();
+		Cluster cpos = new Kluster(vpos, 101, new EuclideanDistanceMeasure());
+		Cluster cneg = new Kluster(vneg, 202, new EuclideanDistanceMeasure());
+		
+		SequenceWriter writer = new SequenceWriter("etc/centroids/part-r-00000", new Text(), new ClusterWritable());
+		writer.write(new Text("/"+prefix+"_pos.centroid"), new ClusterWritable(cpos));
+		writer.write(new Text("/"+prefix+"_neg.centroid"), new ClusterWritable(cneg));
+		writer.close();
+	}
 
 	public static void generate(String prefix) throws IOException {
 		HashMap<String, VectorWritable> map = ShowResults.tfidf(prefix);
@@ -85,9 +105,13 @@ public class Centroids {
 	}
 
 
-	public static void copy(String prefix) throws IOException {
+	public static void copyPosNeg(String prefix) throws IOException {
 		Files.copy(new File("centroids/"+prefix+"_pos.txt").toPath(), new File("etc/inonefolder/"+prefix+"_pos.txt").toPath(), StandardCopyOption.REPLACE_EXISTING);
 		Files.copy(new File("centroids/"+prefix+"_neg.txt").toPath(), new File("etc/inonefolder/"+prefix+"_neg.txt").toPath(), StandardCopyOption.REPLACE_EXISTING);
+	}
+
+	public static void copy(String centroid) throws IOException {
+		Files.copy(new File("centroids/"+centroid+".txt").toPath(), new File("etc/inonefolder/"+centroid+".txt").toPath(), StandardCopyOption.REPLACE_EXISTING);
 	}
 
 }

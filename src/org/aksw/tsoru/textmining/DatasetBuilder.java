@@ -50,6 +50,10 @@ public class DatasetBuilder {
 		} else if(type instanceof InOneFolderOutput) {
 			new File(output).mkdirs();
 			for(AndroidApp app : data) {
+				if(app.getReviews() == null) {
+					System.out.println("SKIPPED: "+app.getId());
+					continue;
+				}
 				for(int i=0; i<app.getReviews().size(); i++) {
 					Review rev = app.getReviews().get(i);
 					PrintWriter pw = new PrintWriter(new File(output + "/"
