@@ -55,8 +55,7 @@ public class CosineSim {
 				if(c.equals(notxt))
 					continue outer;
 			String appID = notxt.substring(0, notxt.lastIndexOf("_"));
-			if(appID.equals("org.kill.geek.bdviewer"))
-				System.out.println(review);
+
 			if(!map.containsKey(appID))
 				map.put(appID, new int[6]);
 			int[] val = map.get(appID);
