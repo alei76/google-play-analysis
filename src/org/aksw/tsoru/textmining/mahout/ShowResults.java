@@ -21,7 +21,7 @@ import org.apache.mahout.math.Vector.Element;
 import org.apache.mahout.math.VectorWritable;
 
 /**
- * @author Tommaso Soru <t.soru@informatik.uni-leipzig.de>
+ * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
  *
  */
 public class ShowResults {

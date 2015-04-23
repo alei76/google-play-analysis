@@ -3,7 +3,7 @@ package org.aksw.tsoru.textmining.model;
 import java.util.HashMap;
 
 /**
- * @author Tommaso Soru <t.soru@informatik.uni-leipzig.de>
+ * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
  *
  */
 public class Cluster implements Comparable<Cluster> {

@@ -5,7 +5,7 @@ import org.aksw.tsoru.textmining.mahout.FuzzyKMeansCentroids;
 import org.aksw.tsoru.textmining.model.InOneFolderOutput;
 
 /**
- * @author Tommaso Soru <t.soru@informatik.uni-leipzig.de>
+ * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
  *
  */
 public class Pipeline {
